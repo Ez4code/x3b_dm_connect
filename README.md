@@ -2,7 +2,7 @@
 To test x3b module communication, Ez4code build a ros package.
 
 use xbee to connect windows with ROS or ROS with ROS
-- RF module: XBEE 900HP module
+- RF module: XBEE 900HP module × 3 (or 2)
 - protocol: digimesh
 - ROS version: Melodic
 
