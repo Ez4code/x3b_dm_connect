@@ -1,0 +1,38 @@
+cmake_minimum_required(VERSION 3.0.2)
+project(x3b_dm_connect)
+
+
+find_package(catkin REQUIRED COMPONENTS
+  geometry_msgs
+  roscpp
+  rospy
+  std_msgs
+  message_generation
+)
+
+
+
+catkin_python_setup()
+
+add_message_files(
+   FILES
+   Pose.msg
+ )
+
+generate_messages(
+  DEPENDENCIES
+  geometry_msgs
+  std_msgs
+)
+
+catkin_package(
+  CATKIN_DEPENDS message_runtime
+)
+
+
+catkin_install_python(
+  PROGRAMS nodes/turtle_s3b_ctl.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+#add_executable(turtle_s3b_ctl src/turtle_s3b_ctl.py)
